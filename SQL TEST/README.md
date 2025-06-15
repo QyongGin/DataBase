@@ -49,15 +49,33 @@ where sub_no = 101; 조건 : sub_no가 101인 행의
 ## 삽입문 INSERT
 - 다중 튜플 삽입
 
+```sql
+insert
+into table name(모든 속성명) -- 모든 속성명을 적어야 유지보수, 디버깅면에서 유리하다.
+values (넣을값, 넣을값, 값 없으면 NULL)
+-- 또는
+insert
+into table name 
+select
+from
+where 
+```
+
 <질의31> 컴퓨터정보과 1학년 B반에 20191032 김미영 여학생이 입학하였다. 이를 데이터베이스에 반영하시오.
 
 ```sql
 insert
-into student -- 빈 값을 NULL로 지정하지 않겠다면 모든 필드명을 student()안에 넣어야 한다.
-values(20191032, '김미영', NULL, '컴퓨터정보', 1, 'B', 'F', NULL, NULL);
+into student(stu_no, stu_name, stu_birth, stu_dept, stu_grade, stu_class, stu_gender, stu_height, stu_weight)
+values(20191032, '김미영', NULL, '컴퓨터정보', 1, 'B', 'F', NULL, NULL)
 ```
+
 ## 삭제문 DELETE
 -단일 튜플 삭제
+```SQL
+delete
+from table name
+where 조건 -- 조건이 없으면 모든 자료가 삭제된다.
+```
 
 <질의32> 옥성우 학생이 자퇴하였다. 이를 데이터베이스에 반영하시오.
 
