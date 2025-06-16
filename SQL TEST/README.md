@@ -140,12 +140,12 @@ from emp
 where job = "CLERK";
 ```
 
-## 평균 avg() 날짜/시간 #1900-10-10#
+## 평균 avg() 날짜/시간 #1900-10-10#은 ms access만 가능.
 <질의12> 81년 이후에 입사한 사원들의 평균 급여를 구하라.
 ```sql
 select avg(sal)
 from emp
-where hiredate > #1981-12-31#;
+where hiredate > '1981-12-31'; -- #1981-12-31#은 ms access만.
 ```
 ## 날짜데이터 
 - 년 YEAR()
